@@ -1,0 +1,110 @@
+Tasks: 
+1. Learn more about rebasing and merging and write its differentiation
+2. ⁠Learn and document git stash
+3. ⁠Show how git helps collaboration
+4. ⁠comparison/difference between git flow, github flow, trunk based development
+5. ⁠Trunk based development vs Branch based development (diff, benefits, challenges, atleast 3 each)
+
+
+-----------------------------------------------------------------------------------------------------
+
+(1)Learn more about rebasing and merging and write its differentiation.
+
+•Both techniques are used in Git to integrate changes from one branch into another.
+
+REBASING	
+1)It moves commits from one branch on top of another branch.	
+2)git rebase branch-name	
+3)rewrites commit history(Rewrites history to appear as cleaner)	
+4)Conflicts will need to be resolved at every commit.
+
+MERGING
+1)It combines the two branches by creating a new merge commit that has two parent commits. 
+2)git merge branch-name
+3)keeps original commits(Preserves the complete history with all branches)
+4)Conflicts will be resolved once at merge.
+
+-----------------------------------------------------------------------------------------------------
+(2)⁠Learn and document git stash
+
+git stash is a Git command that temporarily saves your uncommitted changes so you can work on something else, then come back to them later.
+
+-----------------------------------------------------------------------------------------------------
+
+(3)⁠Show how git helps collaboration
+
+-Git makes easier for multiple people to work together without overwriting or losing each other's changes.
+-Every team member has a full copy of the repository (code, history, branches, etc.).
+-Developers can create independent branches to work on features, bug fixes, or experiments. These branches are isolated from each other and from the main codebase.
+-You can work without affecting the main branch.
+-When a feature is ready, you can merge the branch back into the main branch.
+-Team members can review code, discuss changes, and ensure quality before integrating.
+-Git shows exact lines where conflicts happen if two people edit the same file.
+-Developers can resolve conflicts with clear tools and messages.
+-Git tracks who changed what and why using commits and messages.
+-Improves transparency, accountability, and debugging.
+
+------------------------------------------------------------------------------------------------------
+
+4. ⁠comparison/difference between git flow, github flow, trunk based development
+
+1. Branching Strategy:   
+   - Git Flow uses multiple long-living branches ('master', 'develop', 'feature', 'release', 'hotfix').
+   - GitHub Flow has a single 'main' branch with short-lived feature branches.
+   - Trunk-Based Development has a single 'main' branch where developers commit frequently.
+
+2. Complexity:
+   - Git Flow is the most complex due to multiple branch types.
+   - GitHub Flow is simpler, with only 'main' and temporary feature branches.
+   - Trunk-Based Development is the simplest, avoiding long-lived branches.
+
+3. Merge Process:
+   - Git Flow merges feature branches into 'develop' first, then into 'master' upon release.
+   - GitHub Flow merges feature branches directly into 'main' after approval.
+   - Trunk-Based Development integrates changes directly into 'main' frequently.
+
+4. Use Case Suitability:
+   - Git Flow is best for structured development with scheduled releases.
+   - GitHub Flow works well for continuous deployment in fast-moving teams.
+   - Trunk-Based Development is ideal for agile teams with frequent integrations.
+
+5. Risk of Merge Conflicts:
+   - Git Flow has a higher risk due to long-lived branches.
+   - GitHub Flow has fewer conflicts due to short-lived branches.
+   - Trunk-Based Development minimizes conflicts by integrating changes continuously.
+
+------------------------------------------------------------------------------------------------------
+5. ⁠Trunk based development vs Branch based development (diff, benefits, challenges, atleast 3 each)
+
+Differences:
+1. Branching Strategy:  
+   - Trunk-Based Development focuses on direct commits to the 'main' branch with minimal branching.  
+   - Branch-Based Development involves creating separate branches for features, fixes, and releases.  
+
+2. Integration Frequency:   
+   -Trunk-Based Development encourages frequent integration to avoid merge conflicts.  
+   - Branch-Based Development may lead to delayed integrations, increasing risk of conflicts.  
+
+3. Deployment Model: 
+   - Trunk-Based Development supports continuous delivery with rapid deployments.  
+   - Branch-Based Development typically follows scheduled releases and slower deployments.  
+
+Benefits of Trunk-Based Development:
+1. Reduced Merge Conflicts: Frequent integration prevents large, complex merges.  
+2. Faster Release Cycles: Enables continuous integration and deployment.  
+3. Improved Code Quality: Early detection of issues ensures stability and better collaboration.  
+
+Challenges of Trunk-Based Development:
+1. Requires Strong CI/CD Practices: Automated testing and monitoring are essential.  
+2. High Discipline Needed: Developers must commit small, tested changes frequently.  
+3. Potential Instability: Mistakes in direct commits can impact the 'main' branch quickly.  
+
+Benefits of Branch-Based Development:
+1. Isolated Development: Developers work independently without affecting the main codebase.  
+2. Better Code Reviews: Pull requests enable thorough reviews before merging.  
+3. Clear Release Management: Teams can plan and manage features before integrating.  
+
+Challenges of Branch-Based Development:
+1. Risk of Merge Conflicts:Long-lived branches can cause complex merges.  
+2. Slower Integration: Features may sit in branches for extended periods before merging.  
+3. Delayed Feedback: Issues might only surface after a feature is merged, slowing fixes.  
