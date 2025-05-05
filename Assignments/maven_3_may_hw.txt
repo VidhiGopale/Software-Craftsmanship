@@ -1,0 +1,44 @@
+Q. What is POM?
+
+POM stands for Project Object Model.
+It is the fundamental unit of work in Maven.
+Defined in an XML file named pom.xml, located in the root directory of every Maven project.
+It describes the project structure, dependencies, plugins, build settings, and more.
+
+
+Q. What is Super POM?
+
+Super POM is the default parent POM for all Maven projects.
+It’s provided by Maven itself and contains default configurations that every project inherits if they are not overridden.
+Located internally within Maven’s installation (you don’t edit this directly).
+Helps reduce redundancy by setting default behaviors, such as:
+Default source directory (src/main/java)
+Default build plugins
+Default repositories (e.g., Maven Central)
+
+Q. what are different scope of dependencies and its use cases with 1 example each
+
+1. compile (default)
+Used for libraries needed at compile and runtime.
+Example: SLF4J
+<scope>compile</scope>
+
+2. provided
+Used when the container provides the dependency at runtime.
+Example: Servlet API in Tomcat
+<scope>provided</scope>
+
+3. runtime
+Needed only during runtime, not at compile time.
+Example: JDBC Driver
+<scope>runtime</scope>
+
+4. test
+Used only during testing.
+Example: JUnit
+<scope>test</scope>
+
+5. system (not recommended)
+For manually provided JARs on the file system.
+Example: Local legacy JAR
+<scope>system</scope>

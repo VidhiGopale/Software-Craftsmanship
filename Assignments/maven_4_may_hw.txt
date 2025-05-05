@@ -1,0 +1,55 @@
+1.Learn about different types of maven goals
+
+In Maven, goals are specific tasks that contribute to the build and project management process. They are executed by plugins, and each plugin can have multiple goals. You can invoke goals individually or as part of a build lifecycle. Here's an overview of the different types of Maven goals:
+
+1. Standard Lifecycle Goals
+
+These goals belong to Maven's default lifecycles. The three main lifecycles are:
+
+a. clean lifecycle(cleans the project):
+clean: Deletes the 'target/' directory (where build artifacts go).
+
+b. default (build) lifecycle (most used):
+
+validate: Checks if the project is correct and all necessary info is available.
+compile: Compiles the source code.
+test: Runs tests using a unit testing framework.
+package: Packages the compiled code (e.g., into a JAR or WAR).
+verify: Runs checks to ensure quality criteria are met.
+install: Installs the package into the local repository.
+deploy: Copies the final package to a remote repository for sharing.
+
+c. site lifecycle (generates project documentation):
+site: Generates documentation using the site plugin.
+site:deploy: Deploys the generated site to a web server.
+
+
+2. Plugin-specific Goals
+
+Each plugin provides its own goals. Examples:
+
+Compiler Plugin (maven-compiler-plugin):
+
+compiler:compile: Compiles the main code.
+compiler:testCompile: Compiles the test code.
+
+JAR Plugin (maven-jar-plugin):
+jar:jar: Creates a JAR file.
+
+Dependency Plugin
+dependency:tree: Shows the dependency hierarchy.
+dependency:copy: Copies project dependencies.
+
+3. Custom Goals
+
+You can also create custom goals via plugins or scripts, especially in multi-module projects or CI/CD pipelines.
+
+------------------------------------------------------------------------------
+2.How to write your own maven goal
+
+Steps to Create a Custom Maven Goal:
+1. Create a Maven Plugin Project
+2. Implement the Custom Goal   
+3. Configure the Plugin in 'pom.xml'
+4. Run Your Custom Goal
+ 
