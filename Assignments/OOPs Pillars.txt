@@ -1,0 +1,97 @@
+Java OOP(Object Oriented Programming) Concepts
+
+Java Object-Oriented Programming (OOPs) is a fundamental concept in Java. It allows developers to structure code using classes and objects, making it more modular, reusable, and scalable.
+
+The core idea of OOPs is to bind data and the functions that operate on it, preventing unauthorized access from other parts of the code. Java strictly follows the DRY (Don't Repeat Yourself) Principle, ensuring that common logic is written once (e.g., in parent classes or utility methods) and reused throughout the application. 
+
+This makes the code:
+Easier to maintain: Changes are made in one place.
+More organized: Follows a structured approach.
+Easier to debug and understand: Reduces redundancy and improves readability.
+
+What is OOPs and Why Do We Use it?
+OOPS stands for Object-Oriented Programming System. It is a programming approach that organizes code into objects and classes and makes it more structured and easy to manage. A class is a blueprint that defines properties and behaviors, while an object is an instance of a class representing real-world entities.
+
+---------------------------------------------------------------------------------------------------------------------------------
+4 Pillars of Object Oriented Programming:
+
+1)Abstraction:
+Data abstraction is the process of hiding certain details and showing only essential information to the user.
+Abstraction can be achieved with either abstract classes or interfaces.
+
+The abstract keyword is a non-access modifier, used for classes and methods:
+
+Abstract class: is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class).
+
+Abstract method: can only be used in an abstract class, and it does not have a body. The body is provided by the subclass (inherited from).
+
+Real-Life Example of Abstraction:
+
+The television remote control is the best example of abstraction. It simplifies the interaction with a TV by hiding all the complex technology. We don’t need to understand how the tv internally works, we just need to press the button to change the channel or adjust the volume.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+2)Encapsulation:
+The meaning of Encapsulation, is to make sure that "sensitive" data is hidden from users. To achieve this, you must:
+
+declare class variables/attributes as private
+provide public get and set methods to access and update the value of a private variable
+
+Get and Set-
+
+private variables can only be accessed within the same class (an outside class has no access to it). However, it is possible to access them if we provide public get and set methods.
+
+The get method returns the variable value, and the set method sets the value.
+
+Syntax for both is that they start with either get or set, followed by the name of the variable, with the first letter in upper case:
+
+Why Encapsulation?
+Better control of class attributes and methods
+Class attributes can be made read-only (if you only use the get method), or write-only (if you only use the set method)
+Flexible: the programmer can change one part of the code without affecting other parts
+Increased security of data
+
+-----------------------------------------------------------------------------------------------------------------------------------
+3)Inheritance:
+It is possible to inherit attributes and methods from one class to another. We group the "inheritance concept" into two categories:
+
+subclass (child) - the class that inherits from another class
+superclass (parent) - the class being inherited from
+To inherit from a class, use the extends keyword.
+
+Inheritance is a fundamental concept in OOP(Object-Oriented Programming). It is the mechanism in Java by which one class is allowed to inherit the features(fields and methods) of another class. In Java, Inheritance means creating new classes based on existing ones. A class that inherits from another class can reuse the methods and fields of that class. In addition, you can add new fields and methods to your current class as well. 
+
+Inheritance promotes code reusability, method overriding, and polymorphism, which makes the Java program more modular and efficient. 
+
+In Java, inheritance is implemented using the extends keyword. The class that inherits is called the subclass (child class), and the class being inherited from is called the superclass (parent class).
+
+Why Use Inheritance in Java?
+-Code Reusability: The code written in the Superclass is common to all subclasses. Child classes can directly use the parent class code.
+-Method Overriding: Method Overriding is achievable only through Inheritance. It is one of the ways by which Java achieves Run Time Polymorphism.
+-Abstraction: The concept of abstraction where we do not have to provide all details, is achieved through inheritance. Abstraction only shows the functionality to the user.
+that Organizes classes in a structured manner, improving readability and maintainability.
+
+Key Terminologies Used in Java Inheritance
+-Class: Class is a set of objects that share common characteristics/ behavior and common properties/ attributes. Class is not a real-world entity. It is just a template or blueprint or prototype from which objects are created.
+-Super Class/Parent Class: The class whose features are inherited is known as a superclass(or a base class or a parent class).
+-Sub Class/Child Class: The class that inherits the other class is known as a subclass(or a derived class, extended class, or child class). The subclass can add its own fields and methods in addition to the superclass fields and methods.
+-Extends Keyword: This keyword is used to inherit properties from a superclass.
+Method Overriding: Redefining a superclass method in a subclass.
+-Reusability: Inheritance supports the concept of “reusability”, i.e. when we want to create a new class and there is already a class that includes some of the code that we want, we can derive our new class from the existing class. By doing this, we are reusing the fields and methods of the existing class.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+4)Polymorphism
+
+Polymorphism means "many forms", and it occurs when we have many classes that are related to each other by inheritance.
+
+Inheritance lets us inherit attributes and methods from another class. Polymorphism uses those methods to perform different tasks. This allows us to perform a single action in different ways.
+
+For example, think of a superclass called Animal that has a method called animalSound(). Subclasses of Animals could be Pigs, Cats, Dogs, Birds - And they also have their own implementation of an animal sound (the pig oinks, and the cat meows, etc.)
+
+Polymorphism in Java is one of the core concepts in object-oriented programming (OOP) that allows objects to behave differently based on their specific class type. The word polymorphism means having many forms, and it comes from the Greek words poly (many) and morph (forms), this means one entity can take many forms. In Java, polymorphism allows the same method or object to behave differently based on the context, specially on the project’s actual runtime class.
+
+Key features of polymorphism:
+
+Multiple Behaviors: The same method can behave differently depending on the object that calls this method.
+Method Overriding: A child class can redefine a method of its parent class.
+Method Overloading: We can define multiple methods with the same name but different parameters.
+Runtime Decision: At runtime, Java determines which method to call depending on the object’s actual class.
