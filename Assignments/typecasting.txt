@@ -1,0 +1,57 @@
+Typecasting
+-------------------------
+
+Typecasting is the process of converting one data type to another data type using the casting operator. When you assign a value from one primitive data type to another type, this is known as type casting. To enable the use of a variable in a specific manner, this method requires explicitly instructing the Java compiler to treat a variable of one data type as a variable of another data type.
+
+Syntax:
+-------------
+
+<datatype> variableName = (<datatype>) value;
+
+Types of Type Casting:
+-------------------------
+
+There are two types of Type Casting in java:
+
+Widening Type Casting
+Narrow Type Casting
+
+
+1)Widening Type Casting 
+-------------------------
+A lower data type is transformed into a higher one by a process known as widening type casting. Implicit type casting and casting down are some names for it. It occurs naturally. Since there is no chance of data loss, it is secure. Widening Type casting occurs when:
+
+-The target type must be larger than the source type.
+-Both data types must be compatible with each other. 
+
+Syntax:
+-----------
+
+larger_data_type variable_name = smaller_data_type_variable;
+
+
+2)Narrow Type Casting
+--------------------------
+
+The process of downsizing a bigger data type into a smaller one is known as narrowing type casting. Casting up or explicit type casting are other names for it. It doesn't just happen by itself. If we don't explicitly do that, a compile-time error will occur. Narrowing type casting is unsafe because data loss might happen due to the lower data type's smaller range of permitted values. A cast operator assists in the process of explicit casting.
+
+
+Syntax:
+
+smaller_data_type variable_name = (smaller_data_type) larger_data_type_variable;
+
+
+Types of Explicit Casting
+-----------------------------
+Mainly there are two types of Explicit Casting:
+
+Explicit Upcasting
+Explicit Downcasting
+
+Explicit Upcasting 
+----------------------
+Upcasting is the process of casting a subtype to a supertype in the inheritance tree's upward direction. When a sub-class object is referenced by a superclass reference variable, an automatic process is triggered without any further effort. 
+
+Explicit Downcasting
+-----------------------
+When a subclass type refers to an object of the parent class, the process is referred to as downcasting. If it is done manually, the compiler issues a runtime ClassCastException error. It can only be done by using the instance of operator. Only the downcast of an object that has already been upcast is possible.

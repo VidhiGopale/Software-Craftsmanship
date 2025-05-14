@@ -1,0 +1,13 @@
+Encapsulation-> Binding together attribute and method acting on it(behavior) is Encapsulation.
+use get set methods.
+
+Abstraction->Hiding complexity and showing essential information.
+eg-atm machine
+use extends keyword
+
+Inheritance
+
+Polymorphism->Ability to take many forms, the ability of objects of different classes to respond to the same method call in their own way is known as polymorphism.
+We can achieve this using-
+1.Method overloading
+2.Method overriding
