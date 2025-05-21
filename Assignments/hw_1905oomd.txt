@@ -1,0 +1,19 @@
+
+1. Task 
+2. ToDoList 
+
+
+Task
+Attributes:
+
+id,title,priority ,completed
+
+Methods:
+mark_complete
+
+ToDoList
+Attributes:
+tasks
+
+Methods:
+add_task,view_tasks,complete_task,delete_task

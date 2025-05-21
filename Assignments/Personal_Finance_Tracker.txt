@@ -1,0 +1,38 @@
+Problem Statement: Personal Finance Tracker
+
+You need to design a simple application to help individuals track their personal finances. The system should allow users to record income and expenses, categorize transactions, and manage different accounts.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Questions:
+
+1.Should we add a transaction filter to allow filtering by date, category, etc.?->Not required
+2.Can transactions be updated or deleted?->Yes
+3.Should we display only completed transactions, or should we also include a transaction status?->Display all transactions with status
+4.Do we need to include a payment method?->No, but mention the account from which payment was made, eg. gpay,creditcard
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+User-
+attributes- 	id,name,accounts
+methods-	add account,get_account,get_total_balance
+
+Account-
+attributes-	acc_number,name,pin,balance,transactions
+methods-	add_transaction,get_transaction,get_balance
+
+Transaction-
+attribute-	id,amount,date,category,transactiontype,transactionstatus,payment_account,PaymentMethod
+Method- 	updateTransaction,deleteTransaction
+
+TransactionType-
+enum-		income,expense
+
+Category-
+enum-		rent,salary,shopping,party,investments
+
+TransactionStatus-
+enum-		pending,completed,failed
+
+PaymentMethod-
+enum-		card,upi,bank transfer

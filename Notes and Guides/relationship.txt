@@ -1,0 +1,60 @@
+Relationship between objects.
+
+1)Relationship of objects: How objects interact with each other
+2)Types of relationship
+3)Real time examples
+
+
+Relationship between objects:
+
+1.Association: A general connection between objects(knows-a)
+
+* Meaning: One class uses another class to do a task.
+* No ownership or inheritance.
+* Objects can exist independently.
+---------------------------------------------------------------------
+2.HAS-A (Composition / Aggregation)
+
+Meaning: One class contains/owns another class.
+Used for: Building complex types from simpler ones.
+
+Composition:
+
+* Strong relationship.
+* Owned object is created **inside** the class.
+* If main object is destroyed → part is also destroyed.
+* Example: Building has a Room.
+
+Aggregation:
+
+* Weak relationship.
+* Object is passed from outside
+* If main object is destroyed → part still exists.
+* Example: Person has an Address.
+
+----------------------------------------------------------------------
+3. IS-A (Inheritance)
+
+* Meaning: One class is a type of another.
+* Keyword: (colon in C#)
+* Example: Dog : Animal → Dog is an Animal.
+* Used for: Reusing code from parent class.
+* Key Concepts: virtual, override, 'base'
+* Child class gets all properties and methods of parent class.
+
+
+4. dependency-
+pc and printer are example as we can attach any printer to computer lifetime.
+
+---
+
+Summary:
+
+| Relation | Meaning          | Example           | Ownership | Lifetime Tied? |
+| -------- | ---------------- | ----------------- | --------- | -------------- |
+| IS-A     | Inherits from    | Dog is-an Animal  | ❌         | ✅              |
+| HAS-A    | Contains/Owns    | Car has-an Engine | ✅         | Depends        |
+| USES-A   | Uses temporarily | Person uses a pen | ❌         | ❌              |
+
+
+
