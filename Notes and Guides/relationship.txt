@@ -12,6 +12,8 @@ Relationship between objects:
 * Meaning: One class uses another class to do a task.
 * No ownership or inheritance.
 * Objects can exist independently.
+
+Cardinality: one to one,many to one,one to many
 ---------------------------------------------------------------------
 2.HAS-A (Composition / Aggregation)
 
