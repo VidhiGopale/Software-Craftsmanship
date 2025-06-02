@@ -17,22 +17,23 @@ their exercises.
 ### Classes
 
 1. User
-   1. Attributes: id, name, weight, height, age, exerciseList, progress, goals
-   2. Behaviours: login, get/set/update, addExercise, removeExercise, updateExercise,viewProgress, updateProgress,addGoal,updateGoal,deleteGoal
+   1. Attributes: id, name, weight, height, age, progress, goals
+   2. Behaviours: login, get/set/update,viewProgress, updateProgress,addGoal,updateGoal,deleteGoal
 
 2. Exercise
     1. Attributes: id, duration, exerciseType(enum), date, caloriesBurned
     2. Behaviours: get/set , addCaloriesBurned
    
 3. Progress
-    1. Attributes: id, weightProgress, exerciseSummary(eg.zumba: 1 hr)
+    1. Attributes: id, weightProgress(26-5-25,65), exerciseSummary(eg.zumba: 1 hr)
     2. Behaviours: get/set, addWeightProgress, addExerciseSummary
 
 4. Goal
-   1. Attributes: id, goalType(enum), targetHeight, targetWeight, targetDate
-   2. Behaviours: viewGoal , updateGoal
+   1. Attributes: id, goalType(enum), targetHeight, targetWeight, targetDate, status(enum)
+   2. Behaviours: viewGoal 
 
 ### Enums
 1. ExerciseType : Cardio, StrengthTraining, Zumba, Yoga
 2. GoalType : WeightLoss, WeightGain, Flexibility, Stamina
+3. Status : InProgress, Completed, NotStarted
 
