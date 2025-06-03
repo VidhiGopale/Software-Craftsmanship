@@ -37,4 +37,4 @@ and guest check-in/check-out.
 
 ## Enum
 1. roomAvailability - Yes, No
-2. PaymentStatus- Success, Failed
+2. PaymentStatus- Paid, Unpaid
