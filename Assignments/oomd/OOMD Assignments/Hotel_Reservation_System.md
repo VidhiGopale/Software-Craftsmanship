@@ -2,6 +2,7 @@ Problem Statement- 3. Hotel Reservation System:
 Design a system to manage hotel rooms, reservations, and guest information. 
 The system should handle room availability, reservation processing, 
 and guest check-in/check-out.
+Corrections - update list datatype correctly, map is wrong and the knows a relationship cannot have direct relationship.
 
 # Hotel Reservation System
 
