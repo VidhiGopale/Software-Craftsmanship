@@ -56,40 +56,31 @@ A small local community center (e.g., "Harmony Hub") frequently organizes variou
 
 # Local Community Event Registration System
 
-
-## Analysis
-
-1. Organizers must be able to create new events.
-
 ## Class
 
-1. Community
-    1. Attributes : name, organizers: List<Organizer>, admin, events: List<Event>, eventType(enum) ,users: List<User>
+1. community
+    1. Attributes : name, organizers: List<Organizer>, events: List<Event>, users: List<User>
     2. Methods : get/set
 
 2. organizer
-    1. Attributes : id, name, event
-    2. Methods : get/set, createEvent, updateEvent, viewParticipants, changeEventDate, updateCEventCapacity, updateEventStatus, markAttendence(eventId, ParticipantId)
+    1. Attributes : id, name, events :List<Event>, participants :List<Participant>
+    2. Methods : createEvent, viewParticipants, setEventCapacity, changeEventDate,  setEventStatus, markAttendence(eventId, ParticipantId), setEventDeadline, setEventFee, viewEventDetails
 
-3. admin
-    1. Attributes : name, organizers: List<Organizer>, users: List<User>
-    2. Methods : makePaymentToOrganizer, manageUsers
-
-4. event
-    1. Attributes : eventId, eventName, eventType(enum), eventDescription, date, time, location, fee, eventStatus(enum), Capacity, registrations: list<Registartion>, organizer
+3. event
+    1. Attributes : eventId, eventName, eventType(enum), eventDescription, date, time, location, fee, eventStatus(enum), capacity, registrations: list<Registration>, organizers: List<Organizer>, participants: List<Participant>
     2. Methods : get/set
 
-5. registration
-    1. Attributes : id, participants: List<Participant> , deadline, eventFeeStatus(enum), event, registrationTime, paymentStatus(enum), attendenceMarked(bool)
+4. registration
+    1. Attributes : uid, uname, deadline, eventFeeStatus(enum), events: List<Event>, registrationTime, registrationDeadline, cancellationDeadline
     2. Methods : get/set
-   
-6. Participant
-    1. Attributes : ParticipantId, registrations: list<Registration>
-    2. Methods : get/set, makeRegistrationForEvent, cancelRegistration, viewRegisteredEvents
 
-7. User
-   1. Attributes : id, name, email, phone, password
-   2. Methods : updateProfile
+5. Participant
+    1. Attributes : participantId, registrations: list<Registration>, attendenceStatus(enum)
+    2. Methods : get/set, cancelRegistration, viewRegisteredEvents, cancelRegistration
+
+6. User
+   1. Attributes : uid, uname, email, phone, password, events :List<Event>
+   2. Methods : createProfile, viewProfile, updateProfile, checkAvailableEvents, makeRegistrationForEvent
 
 ## Enum
 
