@@ -1,4 +1,4 @@
-**Problem Statement: "Local Community Event Registration System"
+Problem Statement: "Local Community Event Registration System"
 
 Background:
 A small local community center (e.g., "Harmony Hub") frequently organizes various events for its residents, such as workshops (e.g., "Introduction to Pottery"), sports tournaments (e.g., "Badminton Singles"), cultural festivals (e.g., "Annual Spring Fair"), and educational seminars (e.g., "Financial Planning for Seniors"). Currently, event information is posted on a notice board, and registration is done manually at the front desk, often leading to long queues, lost forms, and difficulties in managing participant numbers and payments.
