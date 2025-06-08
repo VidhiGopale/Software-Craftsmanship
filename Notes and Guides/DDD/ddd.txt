@@ -3,3 +3,12 @@ It is an approach in Software development that centers on modelling the real-wor
 
 
 In DDD the domain model becomes the backbone of the system. The code and design are driven by this model using ubiquitous language.
+
+Design Types in DDD-
+1. Entity : Any model which has id, which is mutable
+2. Value Object : Any model which does not need unique id which is immutable
+3. Aggregate : An entity made up of other entities
+4. Repository : An abstraction layer on top of DB
+5. Service : Is aa class, where teh domain 
+	a.doain
+	b.
