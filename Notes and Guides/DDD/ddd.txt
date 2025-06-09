@@ -9,6 +9,7 @@ Design Types in DDD-
 2. Value Object : Any model which does not need unique id which is immutable
 3. Aggregate : An entity made up of other entities
 4. Repository : An abstraction layer on top of DB
-5. Service : Is aa class, where teh domain 
-	a.doain
-	b.
+5. Service : Is a class, where the domain/core logic is kept 
+	a. domain service: domain handling
+	b. application service: app handling
+/
