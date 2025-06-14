@@ -1,5 +1,9 @@
 package org.unusualspends.domain.entity;
 
+import org.unusualspends.exception.InvalidMobileNumberException;
+import org.unusualspends.exception.InvalidTransactionIdException;
+import org.unusualspends.exception.InvalidUserIdException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +15,12 @@ public class User {
     private final List<CreditCard> cards;
 
     public User(String id, String name, String email, String mobile) {
+        if(id==null|| id.isBlank()){
+            throw new InvalidUserIdException(id);
+        }
+        if (mobile == null || !mobile.matches("\\d{10}")) {
+            throw new InvalidMobileNumberException(mobile);
+        }
         this.id = id;
         this.name = name;
         this.email = email;

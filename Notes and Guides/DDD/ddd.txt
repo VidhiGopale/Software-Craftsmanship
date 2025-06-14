@@ -12,4 +12,3 @@ Design Types in DDD-
 5. Service : Is a class, where the domain/core logic is kept 
 	a. domain service: domain handling
 	b. application service: app handling
-/
