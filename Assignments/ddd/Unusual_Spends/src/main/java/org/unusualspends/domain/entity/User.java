@@ -1,5 +1,6 @@
 package org.unusualspends.domain.entity;
 
+import org.unusualspends.exception.InvalidEmailIdException;
 import org.unusualspends.exception.InvalidMobileNumberException;
 import org.unusualspends.exception.InvalidTransactionIdException;
 import org.unusualspends.exception.InvalidUserIdException;
@@ -21,6 +22,9 @@ public class User {
         if (mobile == null || !mobile.matches("\\d{10}")) {
             throw new InvalidMobileNumberException(mobile);
         }
+        if(email==null || email.isBlank()){
+            throw new InvalidEmailIdException(email);
+        }
         this.id = id;
         this.name = name;
         this.email = email;
@@ -31,7 +35,6 @@ public class User {
     public void addCard(CreditCard card) {
         cards.add(card);
     }
-
     public String getId() {
         return id;
     }
@@ -44,7 +47,6 @@ public class User {
     public String getMobile() {
         return mobile;
     }
-
     public List<CreditCard> getCards() {
         return cards;
     }

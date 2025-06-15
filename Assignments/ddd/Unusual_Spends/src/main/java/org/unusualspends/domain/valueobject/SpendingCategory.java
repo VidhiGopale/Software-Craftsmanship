@@ -6,5 +6,6 @@ public enum SpendingCategory {
     FUEL,
     ENTERTAINMENT,
     UTILITY,
-    TRAVEL
+    TRAVEL,
+    JWELLERY
 }

@@ -1,7 +1,6 @@
 package org.unusualspends.domain.entity;
 
 import org.unusualspends.domain.valueobject.SpendingCategory;
-import org.unusualspends.exception.InvalidCreditCardNumberException;
 import org.unusualspends.exception.InvalidMerchantIdException;
 
 public class Merchant {
