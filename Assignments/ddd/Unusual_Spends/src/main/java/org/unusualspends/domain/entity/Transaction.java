@@ -1,6 +1,7 @@
 package org.unusualspends.domain.entity;
 
 import org.unusualspends.exception.InvalidMerchantIdException;
+import org.unusualspends.exception.InvalidTransactionAmountException;
 import org.unusualspends.exception.InvalidTransactionIdException;
 
 import java.time.LocalDateTime;
@@ -12,15 +13,18 @@ public class Transaction {
     private final String creditCardId;
     private final LocalDateTime timestamp;
 
-    public Transaction(String id, double amount, String merchantId, String creditCardId, LocalDateTime timestamp) {
+    public Transaction(String id, double amount, String merchantId, String creditCardId) {
         if(id==null|| id.isBlank()){
             throw new InvalidTransactionIdException(id);
+        }
+        if(amount<0){
+            throw new InvalidTransactionAmountException(amount);
         }
         this.id = id;
         this.amount = amount;
         this.merchantId = merchantId;
         this.creditCardId = creditCardId;
-        this.timestamp = timestamp;
+        this.timestamp = LocalDateTime.now();
     }
 
     public String getId() {
@@ -38,7 +42,7 @@ public class Transaction {
     public LocalDateTime getTimestamp() {
         return timestamp;
     }
-    public int getMonth() {
-        return timestamp.getMonthValue();
+    public String getMonth() {
+        return timestamp.getMonth().toString();
     }
 }
