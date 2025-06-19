@@ -1,16 +1,16 @@
 package org.unusualspends.db;
 
 import org.unusualspends.domain.entity.Merchant;
-import org.unusualspends.domain.entity.Transaction;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MerchantDB {
     private final List<Merchant> merchants;
 
     public MerchantDB(){
-        merchants=new ArrayList<>();
+        this.merchants=new ArrayList<>();
     }
 
     public List<Merchant> getMerchants(){
@@ -19,5 +19,13 @@ public class MerchantDB {
 
     public void addMerchant(Merchant merchant){
         this.merchants.add(merchant);
+    }
+
+    public Merchant getMerchantById(String merchantId){
+        return this.merchants
+                .stream()
+                .filter(merchant -> Objects.equals(merchantId, merchant.getId())
+                )
+                .findFirst().get();
     }
 }
