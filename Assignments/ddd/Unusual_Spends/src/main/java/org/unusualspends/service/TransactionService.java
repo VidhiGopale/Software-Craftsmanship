@@ -9,6 +9,7 @@ import org.unusualspends.repo.TransactionRepo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class TransactionService {
@@ -36,38 +37,16 @@ public class TransactionService {
     }
 
     public List<SpendingByCategoryAndAmount> getSpendingByCategoryAndAmountFor(Set<String> creditCardIds,String month,List<TransactionWithCategory> transactionWithCategoryList){
-
-        List<SpendingByCategoryAndAmount> spendingByCategoryAndAmountList = new ArrayList<>();
-        List<TransactionWithCategory> validTransactions = new ArrayList<>();
-
-        //loop through all transactions
-        for (TransactionWithCategory transactionWithCategory : transactionWithCategoryList){
-            //find transaction month
-            String transactionMonth = transactionWithCategory.getTransaction().getMonth();
-            //check if transaction month is equal to given month
-            if(transactionMonth == month){
-                //find the credit card from which the transaction was performed
-                String creditCardIdFromTransaction = transactionWithCategory.getTransaction().getCreditCardId();
-                // check if the credit card ids contains this credit card id
-
-                if(creditCardIds.contains(creditCardIdFromTransaction)) {
-                    // if yes then this is valid transaction
-                    validTransactions.add(transactionWithCategory);
-                }
-            }
-        }
-
-        for (TransactionWithCategory transactionWithCategory : validTransactions){
-
-            SpendingCategory spendingCategory = transactionWithCategory.getSpendingCategory();
-
-            Double amount = transactionWithCategory.getTransaction().getAmount();
-
-            var spendingByCategoryAndAmount = new SpendingByCategoryAndAmount(spendingCategory,amount);
-
-            spendingByCategoryAndAmountList.add(spendingByCategoryAndAmount);
-        }
-
-        return spendingByCategoryAndAmountList;
+        return transactionWithCategoryList.stream()
+                .filter(transactionWithCategory ->
+                        Objects.equals(month,transactionWithCategory.getTransaction().getMonth())&&
+                                creditCardIds.contains(transactionWithCategory.getTransaction().getCreditCardId())
+                )
+                .map(validTransaction ->
+                        new SpendingByCategoryAndAmount(
+                                validTransaction.getSpendingCategory(),
+                                validTransaction.getTransaction().getAmount()
+                        )
+                ).toList();
     }
 }
