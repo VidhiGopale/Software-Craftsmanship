@@ -20,3 +20,4 @@ public class TransactionDB {
         this.transactions.add(transaction);
     }
 }
+

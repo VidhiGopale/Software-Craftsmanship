@@ -1,6 +1,5 @@
 package org.unusualspends.domain.entity;
 
-import org.unusualspends.exception.InvalidMerchantIdException;
 import org.unusualspends.exception.InvalidTransactionAmountException;
 import org.unusualspends.exception.InvalidTransactionIdException;
 
@@ -13,7 +12,7 @@ public class Transaction {
     private final String creditCardId;
     private final LocalDateTime timestamp;
 
-    public Transaction(String id, double amount, String merchantId, String creditCardId) {
+    public Transaction(String id, double amount, String merchantId, String creditCardId, LocalDateTime localDateTime) {
         if(id==null|| id.isBlank()){
             throw new InvalidTransactionIdException(id);
         }

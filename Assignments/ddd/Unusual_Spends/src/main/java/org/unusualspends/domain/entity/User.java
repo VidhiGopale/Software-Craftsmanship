@@ -2,7 +2,6 @@ package org.unusualspends.domain.entity;
 
 import org.unusualspends.exception.InvalidEmailIdException;
 import org.unusualspends.exception.InvalidMobileNumberException;
-import org.unusualspends.exception.InvalidTransactionIdException;
 import org.unusualspends.exception.InvalidUserIdException;
 
 import java.util.ArrayList;

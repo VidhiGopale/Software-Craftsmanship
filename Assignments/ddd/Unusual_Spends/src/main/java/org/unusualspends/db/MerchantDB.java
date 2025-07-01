@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class MerchantDB {
     private final List<Merchant> merchants;
-
+    
     public MerchantDB(){
         this.merchants=new ArrayList<>();
     }
