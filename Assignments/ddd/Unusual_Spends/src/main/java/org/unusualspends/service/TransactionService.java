@@ -39,7 +39,7 @@ public class TransactionService {
     public List<SpendingByCategoryAndAmount> getSpendingByCategoryAndAmountFor(Set<String> creditCardIds,String month,List<TransactionWithCategory> transactionWithCategoryList){
         return transactionWithCategoryList.stream()
                 .filter(transactionWithCategory ->
-                        Objects.equals(month,transactionWithCategory.getTransaction().getMonth())&&
+                        month == transactionWithCategory.getTransaction().getMonth() &&
                                 creditCardIds.contains(transactionWithCategory.getTransaction().getCreditCardId())
                 )
                 .map(validTransaction ->

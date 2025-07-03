@@ -23,7 +23,7 @@ public class Transaction {
         this.amount = amount;
         this.merchantId = merchantId;
         this.creditCardId = creditCardId;
-        this.timestamp = LocalDateTime.now();
+        this.timestamp = localDateTime;
     }
 
     public String getId() {
