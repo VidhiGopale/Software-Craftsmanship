@@ -3,6 +3,7 @@ package org.unusualspends.domain.entity;
 import org.unusualspends.exception.InvalidEmailIdException;
 import org.unusualspends.exception.InvalidMobileNumberException;
 import org.unusualspends.exception.InvalidUserIdException;
+import org.unusualspends.exception.InvalidUserNameException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,10 @@ public class User {
         if(id==null|| id.isBlank()){
             throw new InvalidUserIdException(id);
         }
-        if (mobile == null || !mobile.matches("\\d{10}")) {
+        if(name==null|| name.isBlank()){
+            throw new InvalidUserNameException(name);
+        }
+        if (mobile == null|| mobile.isBlank() || !mobile.matches("\\d{10}")) {
             throw new InvalidMobileNumberException(mobile);
         }
         if(email==null || email.isBlank()){
