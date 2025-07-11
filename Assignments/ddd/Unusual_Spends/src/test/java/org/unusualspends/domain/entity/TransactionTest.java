@@ -1,22 +1,70 @@
 package org.unusualspends.domain.entity;
 
 import org.junit.jupiter.api.Test;
+import org.unusualspends.exception.InvalidTransactionAmountException;
+import org.unusualspends.exception.InvalidTransactionIdException;
+
+import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class TransactionTest {
     @Test
     void shouldCreateObjectWithGivenValues(){
-        String userId="111";
-        String userName="Vidhi";
-        String userEmail="vidhigopale@gmail.com";
-        String userMobile="9518970490";
+        String id="123";
+        double amount=200;
+        String merchantId="M234";
+        String creditCardId="12839030393";
+        LocalDateTime timestamp = LocalDateTime.now();
 
-        var user=new User("111", "Vidhi","vidhigopale@gmail.com", "9518970490");
+        var transaction = new Transaction(id,amount,merchantId,creditCardId,timestamp);
 
-        assertEquals(userId, user.getId());
-        assertEquals(userName, user.getName());
-        assertEquals(userEmail, user.getEmail());
-        assertEquals(userMobile, user.getMobile());
+        assertEquals(id, transaction.getId() );
+        assertEquals(amount, transaction.getAmount() );
+        assertEquals(merchantId, transaction.getMerchantId());
+        assertEquals(creditCardId, transaction.getCreditCardId() );
+        assertEquals(timestamp,transaction.getTimestamp());
+    }
+
+    @Test
+    void shouldThrowInvalidTransactionIdExceptionWhenIdIsNull(){
+        String id=null;
+        double amount=200;
+        String merchantId="M234";
+        String creditCardId="12839030393";
+        LocalDateTime timestamp = LocalDateTime.now();
+        String expectedExceptionMessage = "Invalid Transaction id: null";
+
+        var exceptionObj = assertThrows(InvalidTransactionIdException.class , () -> new Transaction(id, amount, merchantId,creditCardId,timestamp));
+
+        assertEquals(expectedExceptionMessage, exceptionObj.getMessage());
+    }
+
+    @Test
+    void shouldThrowInvalidTransactionIdExceptionWhenIdIsBlank(){
+        String id=" ";
+        double amount=200;
+        String merchantId="M234";
+        String creditCardId="12839030393";
+        LocalDateTime timestamp = LocalDateTime.now();
+        String expectedExceptionMessage = "Invalid Transaction id:  ";
+
+        var exceptionObj = assertThrows(InvalidTransactionIdException.class , () -> new Transaction(id, amount, merchantId,creditCardId,timestamp));
+
+        assertEquals(expectedExceptionMessage, exceptionObj.getMessage());
+    }
+
+    @Test
+    void shouldThrowInvalidTransactionAmountExceptionWhenTransactionLessThanZero(){
+        String id="123";
+        double amount=-1;
+        String merchantId="M234";
+        String creditCardId="12839030393";
+        LocalDateTime timestamp = LocalDateTime.now();
+        String expectedExceptionMessage = "Invalid Transaction Amount: -1.0";
+
+        var exceptionObj = assertThrows(InvalidTransactionAmountException.class , () -> new Transaction(id, amount, merchantId,creditCardId,timestamp));
+
+        assertEquals(expectedExceptionMessage, exceptionObj.getMessage());
     }
 }
