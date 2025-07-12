@@ -7,8 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class MerchantDBTest {
     @Test
     void shouldCreateObjectWithEmptyMerchantList(){
-        var merchantDB = new CreditCardDB();
-        var merchants = merchantDB.get()
-        assertTrue(creditCards.isEmpty());
+        var merchantDB = new MerchantDB();
+        var merchants = merchantDB.getMerchants();
+        assertTrue(merchants.isEmpty());
     }
 }
