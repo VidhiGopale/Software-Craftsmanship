@@ -37,7 +37,13 @@ class MerchantRepoTest {
 
     @Test
     void shouldAbleToGetMerchantCategoryById(){
-
+        var merch = new Merchant("101","Vidhi",SpendingCategory.FOOD);
+        var merchantDb = new MerchantDB();
+        var merchantRepo = new MerchantRepo(merchantDb);
+        merchantRepo.addMerchant(merch);
+        var spendingCategory = merchantRepo.getMerchantCategoryById(merch.getId());
+//test push
+//        assertEquals("FOOD",merch.getCategory());
     }
 
 }
